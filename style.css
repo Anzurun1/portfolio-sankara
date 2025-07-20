@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-dark: #0C151D;
+    --accent-primary: #00C7B7;
+    --accent-secondary: #8A2BE2; /* Roxo para o gradiente */
+    --card-bg: rgba(22, 32, 41, 0.6);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-light: #EAEAEA;
+    --text-muted: #8892b0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    padding-top: 70px; /* Espaço para a navbar fixa */
+}
+
+/* Efeito de Fundo "Aurora" */
+.background-aurora {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 10% 20%, var(--accent-secondary), transparent 40%),
+                radial-gradient(circle at 80% 70%, var(--accent-primary), transparent 40%);
+    filter: blur(150px);
+    opacity: 0.3;
+    animation: moveAurora 20s infinite alternate;
+}
+
+@keyframes moveAurora {
+    from { transform: rotate(0deg) scale(1.2); }
+    to { transform: rotate(360deg) scale(1.5); }
+}
+
+/* Barra de Navegação com Efeito de Vidro */
+.navbar {
+    background-color: rgba(12, 21, 29, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Para Safari */
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--accent-primary) !important;
+}
+.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-primary) !important;
+}
+
+/* Seção Herói */
+.hero-section {
+    padding: 8rem 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-primary);
+    object-fit: cover;
+}
+
+/* Cartões com Efeito de Vidro */
+.tech-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    color: var(--text-light);
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-primary);
+    background: rgba(22, 32, 41, 0.9);
+}
+.tech-card i {
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+}
+.tech-card p {
+    color: var(--text-muted);
+}
+.tech-card h5, .tech-card h3 {
+    font-weight: 600;
+}
+
+
+/* Botão Personalizado */
+.btn-primary-custom {
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border: none;
+    color: var(--text-light);
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 199, 183, 0.2);
+    color: white;
+}
+
+/* Ícones Sociais */
+.social-icons a {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    color: var(--accent-primary);
+}
+
+/* Títulos das Seções */
+h2 {
+    font-weight: 700;
+    color: var(--text-light);
+}
+h2 i {
+    color: var(--accent-primary);
+    margin-right: 10px;
+}
+.text-white-50 {
+    color: var(--text-muted) !important;
+}
+
+
+/* Animação de Entrada */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    border-top: 1px solid var(--border-color);
+}
+/* Adicione este código ao final do seu style.css */
+
+.btn-outline-accent {
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-accent:hover {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+    border-color: var(--accent-primary);
+}
+
+.tech-card h5 {
+    color: var(--text-light);
+}
+/* Adicione este código ao final do seu style.css */
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+    border-color: var(--accent-primary);
+}
